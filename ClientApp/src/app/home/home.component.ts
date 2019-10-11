@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   searchStatus = 'OPEN';
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Grants[]>(baseUrl + 'grants/status').subscribe(result => {
+    http.get<Grants[]>(baseUrl + 'grants/status/1').subscribe(result => {
       this.grants = result;
     }, error => console.error(error));
   }
@@ -35,7 +35,7 @@ interface Grants {
   id: number;
   grantNumber: number;
   grantName: string;
-  status: string;
+  status: number;
   division: string;
   projectStartDate: Date;
   projectEndDate: Date;

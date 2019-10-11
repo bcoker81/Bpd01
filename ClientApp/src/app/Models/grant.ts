@@ -2,7 +2,7 @@ export class Grant {
     id: number;
     grantNumber: number;
     grantName: string;
-    status: string;
+    status: number;
     division: string;
     projectStartDate: Date;
     projectEndDate: Date;

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Grant } from '../Models/grant';
-import { Grants } from '../Data/mock-grants';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Stat } from '../Models/stat';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home-pending',
@@ -9,10 +8,15 @@ import { Stat } from '../Models/stat';
   styleUrls: ['./home-pending.component.css']
 })
 export class HomePendingComponent implements OnInit {
-  grants = Grants;
+  public grants: Grants[];
   searchStatus = 'PENDING';
   stats: Stat;
-  constructor() { }
+
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<Grants[]>(baseUrl + 'grants/status/3').subscribe(result => {
+      this.grants = result;
+    }, error => console.error(error));
+  }
 
   ngOnInit() {
     this.stats = {
@@ -25,5 +29,21 @@ export class HomePendingComponent implements OnInit {
       totalProgrammingReports: 9
     };
   }
+}
 
+interface Grants {
+  id: number;
+  grantNumber: number;
+  grantName: string;
+  status: number;
+  division: string;
+  projectStartDate: Date;
+  projectEndDate: Date;
+  financialReportDueDate: Date;
+  programmingReportDueDate: Date;
+  awardAmount: number;
+  expenditures: number;
+  remainingBalance: number;
+  percentOfFundsSpent: number;
+  match: number;
 }

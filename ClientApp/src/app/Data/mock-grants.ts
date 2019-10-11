@@ -5,7 +5,7 @@ export const Grants: Grant[] = [
         id: 1,
         grantNumber: 1043,
         grantName: 'Adam Walsh Grant',
-        status: 'open',
+        status: 1,
         division: 'CJIS',
         projectStartDate: new Date(2019 - 11 - 16),
         projectEndDate: new Date(2020, 11, 16),
@@ -21,7 +21,7 @@ export const Grants: Grant[] = [
         id: 2,
         grantNumber: 2232,
         grantName: 'Occupant Protection Enforcement (CIOT) - FY19',
-        status: 'open',
+        status: 0,
         division: 'FOB',
         projectStartDate: new Date(2018 - 10 - 0o1),
         projectEndDate: new Date(2020 - 11 - 16),
@@ -37,7 +37,7 @@ export const Grants: Grant[] = [
         id: 2,
         grantNumber: 2232,
         grantName: 'Occupant Protection Enforcement (CIOT) - FY19',
-        status: 'open',
+        status: 2,
         division: 'FOB',
         projectStartDate: new Date(2018 - 10 - 0o1),
         projectEndDate: new Date(2020 - 11 - 16),
@@ -53,7 +53,7 @@ export const Grants: Grant[] = [
         id: 2,
         grantNumber: 2232,
         grantName: 'Occupant Protection Enforcement (CIOT) - FY19',
-        status: 'open',
+        status: 1,
         division: 'FOB',
         projectStartDate: new Date(2018 - 10 - 0o1),
         projectEndDate: new Date(2020 - 11 - 16),
@@ -69,7 +69,7 @@ export const Grants: Grant[] = [
         id: 2,
         grantNumber: 2232,
         grantName: 'Occupant Protection Enforcement (CIOT) - FY19',
-        status: 'open',
+        status: 4,
         division: 'FOB',
         projectStartDate: new Date(2018 - 10 - 0o1),
         projectEndDate: new Date(2020 - 11 - 16),
@@ -81,4 +81,4 @@ export const Grants: Grant[] = [
         percentOfFundsSpent: 5,
         match: 44
     }
-]
+];

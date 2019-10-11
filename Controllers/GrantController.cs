@@ -21,12 +21,19 @@ namespace BPD01.Controllers
             _context = context;
         }
 
-        [HttpGet("status")]
-        public async Task<IEnumerable<Grants>> GetByStatus()
+        [HttpGet("status/{s}")]
+        public async Task<IEnumerable<Grants>> GetByStatus(int s)
         {
             List<Grants> grantList = new List<Grants>();
-            grantList = await _context.Grants.ToListAsync();
+            grantList = await _context.Grants.Where(p => p.Status == s).ToListAsync();
             return grantList;
+        }
+
+        [HttpGet("single/{id}")]
+        public async Task<Grants> GetById(int id)
+        {
+            var result = await _context.Grants.Where(p => p.Id == id).FirstAsync();
+            return result;
         }
     }
 }
