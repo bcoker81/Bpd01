@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Grant } from '../Models/grant';
-import { Grants } from '../Data/mock-grants';
+
 @Component({
   selector: 'app-grants-panel',
   templateUrl: './grants-panel.component.html',
   styleUrls: ['./grants-panel.component.css']
 })
 export class GrantsPanelComponent implements OnInit {
-  grants = Grants;
+  @Input()
+  grants: Grant[];
   selectedGrant: Grant;
   constructor() { }
 

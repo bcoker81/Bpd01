@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using BPD01.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BPD01
 {
@@ -23,8 +23,17 @@ namespace BPD01
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<GRANTrakContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
-            services.AddControllersWithViews();
-            // In production, the Angular files will be served from this directory
+            services.AddCors(o => o.AddPolicy("BPDPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            })
+            );
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //.AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+            // .AddJsonOptions(opt => opt.SerializerSettings.ContractResolver = new DefaultContractResolver())
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
@@ -32,7 +41,7 @@ namespace BPD01
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -45,20 +54,16 @@ namespace BPD01
                 app.UseHsts();
             }
 
+            app.UseCors("BPDPolicy");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
+            app.UseSpaStaticFiles();
 
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
+                routes.MapRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    template: "{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>

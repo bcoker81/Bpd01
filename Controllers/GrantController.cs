@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using BPD01.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace bpd01.Controllers
+namespace BPD01.Controllers
 {
     [ApiController]
     [Route("grants")]
@@ -19,10 +21,12 @@ namespace bpd01.Controllers
             _context = context;
         }
 
-        [HttpGet("status{gStatus}")]
-        public async Task<IActionResult> GetByStatus(int gStatus)
+        [HttpGet("status")]
+        public async Task<IEnumerable<Grants>> GetByStatus()
         {
-            return null;
+            List<Grants> grantList = new List<Grants>();
+            grantList = await _context.Grants.ToListAsync();
+            return grantList;
         }
     }
 }

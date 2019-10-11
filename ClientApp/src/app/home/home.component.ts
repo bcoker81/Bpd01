@@ -1,27 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { Grant } from '../Models/grant';
-import { Grants } from '../Data/mock-grants';
+import { Component, Inject, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Stat } from '../Models/stat';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  grants = Grants;
+  public grants: Grants[];
   stats: Stat;
 
   searchStatus = 'OPEN';
-  constructor() { }
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<Grants[]>(baseUrl + 'grants/status').subscribe(result => {
+      this.grants = result;
+    }, error => console.error(error));
+  }
+
   ngOnInit() {
     this.stats = {
-      totalAwardAmount: 432.00,
-      totalExpenditures: 656645.92,
-      totalRemainingBalance: 3322.11,
-      percentageOfFundsSpent: 10,
-      totalGrants: 2,
-      totalFinancialReports: 2,
-      totalProgrammingReports: 6
+      totalAwardAmount: 53463.00,
+      totalExpenditures: 234.92,
+      totalRemainingBalance: 433.11,
+      percentageOfFundsSpent: 5,
+      totalGrants: 3,
+      totalFinancialReports: 22,
+      totalProgrammingReports: 9
     };
   }
+}
+
+interface Grants {
+  id: number;
+  grantNumber: number;
+  grantName: string;
+  status: string;
+  division: string;
+  projectStartDate: Date;
+  projectEndDate: Date;
+  financialReportDueDate: Date;
+  programmingReportDueDate: Date;
+  awardAmount: number;
+  expenditures: number;
+  remainingBalance: number;
+  percentOfFundsSpent: number;
+  match: number;
 }
