@@ -14,7 +14,7 @@ export const Grants: Grant[] = [
         awardAmount: 404000,
         expenditures: 22000,
         remainingBalance: 382000,
-        percentOfFundsSpent: 5,
+        percentOfFundsSpent: .65,
         match: 44
     },
     {
@@ -30,7 +30,7 @@ export const Grants: Grant[] = [
         awardAmount: 404000,
         expenditures: 22000,
         remainingBalance: 382000,
-        percentOfFundsSpent: 5,
+        percentOfFundsSpent: .05,
         match: 44
     },
     {

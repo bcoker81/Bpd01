@@ -45,7 +45,8 @@ import { HomePendingComponent } from './home-pending/home-pending.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'add-grant', component: AddGrantComponent },
-      { path: 'pending-grant', component: HomePendingComponent }
+      { path: 'pending-grant', component: HomePendingComponent },
+      { path: 'grant-details', component: GrantDetailComponent }
     ])
   ],
   providers: [],

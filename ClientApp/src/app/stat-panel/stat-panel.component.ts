@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Stat } from '../Models/stat';
 
 @Component({
@@ -8,15 +8,8 @@ import { Stat } from '../Models/stat';
 })
 
 export class StatPanelComponent implements OnInit {
-  stat: Stat = {
-    totalAwardAmount: 122348729.00,
-    totalExpenditures: 2938472.92,
-    totalRemainingBalance: 2389479.11,
-    percentageOfFundsSpent: 50,
-    totalGrants: 5,
-    totalFinancialReports: 23,
-    totalProgrammingReports: 19
-  };
+  @Input()
+  stat: Stat;
 
   constructor() { }
 

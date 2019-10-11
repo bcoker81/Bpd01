@@ -1,4 +1,4 @@
-<table class="table table-striped table-dark table-hover header-text">
+<table class="table table-striped table-dark table-hover header-text grants">
     <thead>
         <th>Grant #</th>
         <th>Grant Name</th>
@@ -15,19 +15,26 @@
         <th>Match </th>
     </thead>
     <tbody>
-        <tr *ngFor="let grant of grants">
+        <tr *ngFor="let grant of grants" [class.selected]="grant ===
+            selectedGrant"
+            (click)="onSelect(grant)">
             <td style="color:antiquewhite;">{{grant.grantNumber}}</td>
-            <td style="color:antiquewhite;">{{grant.grantName}}</td>
+            <td style="color:antiquewhite;"><a [routerLink]="['/grant-details']"
+                    routerLinkActive="router-link-active">{{grant.grantName}}</a></td>
             <td style="color:antiquewhite;">{{grant.status}}</td>
             <td style="color:antiquewhite;">{{grant.division}}</td>
             <td style="color:antiquewhite;">{{grant.projectStartDate | date}}</td>
             <td style="color:antiquewhite;">{{grant.projectEndDate | date}}</td>
-            <td style="color:antiquewhite;">{{grant.financialReportDueDate | date}}</td>
-            <td style="color:antiquewhite;">{{grant.programmingReportDueDate | date}}</td>
+            <td style="color:antiquewhite;">{{grant.financialReportDueDate |
+                date}}</td>
+            <td style="color:antiquewhite;">{{grant.programmingReportDueDate |
+                date}}</td>
             <td style="color:antiquewhite;">{{grant.awardAmount | currency}}</td>
             <td style="color:antiquewhite;">{{grant.expenditures | currency}}</td>
-            <td style="color:antiquewhite;">{{grant.remainingBalance | currency}}</td>
-            <td style="color:antiquewhite;">{{grant.percentOfFundsSpent | percent}}</td>
+            <td style="color:antiquewhite;">{{grant.remainingBalance |
+                currency}}</td>
+            <td style="color:antiquewhite;">{{grant.percentOfFundsSpent |
+                percent}}</td>
             <td style="color:antiquewhite;">{{grant.match}}</td>
         </tr>
     </tbody>
