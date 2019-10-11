@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AppService {
-  _configuration = 'BASE_URL';
+  _configuration = 'https://localhost:5001/';
   constructor(private http: HttpClient) {
 
   }
