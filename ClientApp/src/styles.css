@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Montesserat', sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+h2 {
+  font-family: 'Montesserat', sans-serif;
+  font-size: 30px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+#grad {
+  height: 100%;
+  background-color: darkslategray;
+  /* For browsers that do not support gradients */
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #104e77;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.background-div {
+  background-color: rgb(69, 69, 75);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.box-div {
+
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  z-index: 0;
+}

@@ -1,0 +1,34 @@
+<table class="table table-striped table-dark table-hover header-text">
+    <thead>
+        <th>Grant #</th>
+        <th>Grant Name</th>
+        <th>Status</th>
+        <th>Division</th>
+        <th>Project Start Date</th>
+        <th>Project End Date</th>
+        <th>Financial Report Due Date</th>
+        <th>Programming Report Due Date</th>
+        <th>Award Amount</th>
+        <th>Expenditures</th>
+        <th>Remaining Balance</th>
+        <th>% of Funds Spent</th>
+        <th>Match </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let grant of grants">
+            <td style="color:antiquewhite;">{{grant.grantNumber}}</td>
+            <td style="color:antiquewhite;">{{grant.grantName}}</td>
+            <td style="color:antiquewhite;">{{grant.status}}</td>
+            <td style="color:antiquewhite;">{{grant.division}}</td>
+            <td style="color:antiquewhite;">{{grant.projectStartDate | date}}</td>
+            <td style="color:antiquewhite;">{{grant.projectEndDate | date}}</td>
+            <td style="color:antiquewhite;">{{grant.financialReportDueDate | date}}</td>
+            <td style="color:antiquewhite;">{{grant.programmingReportDueDate | date}}</td>
+            <td style="color:antiquewhite;">{{grant.awardAmount | currency}}</td>
+            <td style="color:antiquewhite;">{{grant.expenditures | currency}}</td>
+            <td style="color:antiquewhite;">{{grant.remainingBalance | currency}}</td>
+            <td style="color:antiquewhite;">{{grant.percentOfFundsSpent | percent}}</td>
+            <td style="color:antiquewhite;">{{grant.match}}</td>
+        </tr>
+    </tbody>
+</table>
