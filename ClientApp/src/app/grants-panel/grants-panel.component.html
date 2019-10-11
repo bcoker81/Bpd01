@@ -15,7 +15,7 @@
         <th>Match </th>
     </thead>
     <tbody>
-        <tr *ngFor="let grant of grants">
+        <tr *ngFor="let grant of grants" [class.selected]="grant === selectedgrant" (click)="onSelect(grant)">
             <td style="color:antiquewhite;">{{grant.grantNumber}}</td>
             <td style="color:antiquewhite;">{{grant.grantName}}</td>
             <td style="color:antiquewhite;">{{grant.status}}</td>
