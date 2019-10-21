@@ -8,14 +8,31 @@
             <h1 class="">GRANTrak Online Grant Management System</h1>
             <h5 class="">MSHP - Budget and Procurement Division</h5>
             <hr />
-            <p class="lead">
-                Please, to get started select an option on from the sidebar on the left side of the screen.
+            <p style="text-align: left;">
+                Please, to get started select an option on from the sidebar on the left side of the screen or get
+                started with quick links from below.
             </p>
+            <br />
+            <div class="row">
+                <div class="col-md-4"><a class="btn-two green block" [routerLink]="['/add-grant']"><i
+                            class="fas fa-plus-square"></i>
+                        &nbsp;Add Grant</a>
+                </div>
+                <div class="col-md-4"><a class="btn-two green block" [routerLink]="['/home']"><i
+                            class="fas fa-box-open"></i>
+                        &nbsp;Open Grants</a>
+                </div>
+                <div class="col-md-4"><a class="btn-two green block" [routerLink]="['/pending-grant']"><i class="fas
+                    fa-stopwatch"></i>
+                        &nbsp;Pending Grants</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
 
 <div class="footer">
     <p style="color:antiquewhite;">Contact Information : 573-751-9000</p>
-    <p style="color:antiquewhite;">Active director: Brent, Smith</p>
+    <p style="color:antiquewhite;">Active Director: Brent, Smith</p>
 </div>
