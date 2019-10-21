@@ -1,0 +1,11 @@
+.footer {
+    background-color: darkgray;
+    height: 70px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 50px;
+}

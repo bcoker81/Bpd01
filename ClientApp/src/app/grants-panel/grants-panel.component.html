@@ -16,8 +16,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let grant of grants" [class.selected]="grant ===
-            selectedGrant"
-            (click)="onSelect(grant)">
+            selectedGrant" (click)="onSelect(grant)">
             <td style="color:antiquewhite;">{{grant.grantNumber}}</td>
             <td style="color:antiquewhite;"><a [routerLink]="['/grant-details']"
                     routerLinkActive="router-link-active">{{grant.grantName}}</a></td>

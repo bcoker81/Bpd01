@@ -14,14 +14,11 @@ export class HomeComponent implements OnInit {
   stats: Stat;
 
   searchStatus = 'OPEN';
-  // constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-  //   http.get<Grants[]>(baseUrl + 'grants/status/1').subscribe(result => {
-  //     this.grants = result;
-  //   }, error => console.error(error));
-  // }
 
-  constructor(private _appService: AppService) {
-
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<Grants[]>(baseUrl + 'grants/status/1').subscribe(result => {
+      this.grants = result;
+    }, error => console.error(error));
   }
 
   ngOnInit() {
@@ -34,11 +31,6 @@ export class HomeComponent implements OnInit {
       totalFinancialReports: 22,
       totalProgrammingReports: 9
     };
-  }
-
-  getOpenGrants() {
-    this._appService.getAll('grants/status/1')
-      .subscribe((data: Grants[]) => this.grants = data);
   }
 }
 

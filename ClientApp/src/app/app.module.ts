@@ -18,6 +18,12 @@ import { GrantsPanelComponent } from './grants-panel/grants-panel.component';
 import { SpinnerLoaderComponent } from './spinner-loader/spinner-loader.component';
 import { GrantDetailComponent } from './grant-detail/grant-detail.component';
 import { HomePendingComponent } from './home-pending/home-pending.component';
+import { GrantDetailPanelComponent } from './grant-detail-panel/grant-detail-panel.component';
+import { GanInfoPanelComponent } from './gan-info-panel/gan-info-panel.component';
+import { GrantAttachmentPanelComponent } from './grant-attachment-panel/grant-attachment-panel.component';
+import { ReportDetailsPanelComponent } from './report-details-panel/report-details-panel.component';
+import { CommentsPanelComponent } from './comments-panel/comments-panel.component';
+import { GrantExpendituresComponent } from './grant-expenditures/grant-expenditures.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,13 @@ import { HomePendingComponent } from './home-pending/home-pending.component';
     GrantsPanelComponent,
     SpinnerLoaderComponent,
     GrantDetailComponent,
-    HomePendingComponent
+    HomePendingComponent,
+    GrantDetailPanelComponent,
+    GanInfoPanelComponent,
+    GrantAttachmentPanelComponent,
+    ReportDetailsPanelComponent,
+    CommentsPanelComponent,
+    GrantExpendituresComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,7 +58,8 @@ import { HomePendingComponent } from './home-pending/home-pending.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'add-grant', component: AddGrantComponent },
       { path: 'pending-grant', component: HomePendingComponent },
-      { path: 'grant-details', component: GrantDetailComponent }
+      { path: 'grant-details', component: GrantDetailComponent },
+      { path: 'home', component: HomeComponent }
     ])
   ],
   providers: [],
