@@ -24,6 +24,7 @@ import { GrantAttachmentPanelComponent } from './grant-attachment-panel/grant-at
 import { ReportDetailsPanelComponent } from './report-details-panel/report-details-panel.component';
 import { CommentsPanelComponent } from './comments-panel/comments-panel.component';
 import { GrantExpendituresComponent } from './grant-expenditures/grant-expenditures.component';
+import { HomeLandingComponent } from './home-landing/home-landing.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { GrantExpendituresComponent } from './grant-expenditures/grant-expenditu
     GrantAttachmentPanelComponent,
     ReportDetailsPanelComponent,
     CommentsPanelComponent,
-    GrantExpendituresComponent
+    GrantExpendituresComponent,
+    HomeLandingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -59,7 +61,8 @@ import { GrantExpendituresComponent } from './grant-expenditures/grant-expenditu
       { path: 'add-grant', component: AddGrantComponent },
       { path: 'pending-grant', component: HomePendingComponent },
       { path: 'grant-details', component: GrantDetailComponent },
-      { path: 'home', component: HomeComponent }
+      { path: 'home', component: HomeComponent },
+      { path: 'home-landing', component: HomeLandingComponent }
     ])
   ],
   providers: [],
