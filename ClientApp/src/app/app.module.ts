@@ -25,6 +25,7 @@ import { ReportDetailsPanelComponent } from './report-details-panel/report-detai
 import { CommentsPanelComponent } from './comments-panel/comments-panel.component';
 import { GrantExpendituresComponent } from './grant-expenditures/grant-expenditures.component';
 import { HomeLandingComponent } from './home-landing/home-landing.component';
+import { HomeClosedComponent } from './home-closed/home-closed.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { HomeLandingComponent } from './home-landing/home-landing.component';
     ReportDetailsPanelComponent,
     CommentsPanelComponent,
     GrantExpendituresComponent,
-    HomeLandingComponent
+    HomeLandingComponent,
+    HomeClosedComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -62,7 +64,8 @@ import { HomeLandingComponent } from './home-landing/home-landing.component';
       { path: 'pending-grant', component: HomePendingComponent },
       { path: 'grant-details', component: GrantDetailComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'home-landing', component: HomeLandingComponent }
+      { path: 'home-landing', component: HomeLandingComponent },
+      { path: 'closed-grant', component: HomeClosedComponent }
     ])
   ],
   providers: [],
