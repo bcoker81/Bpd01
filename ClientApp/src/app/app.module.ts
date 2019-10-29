@@ -27,6 +27,7 @@ import { GrantExpendituresComponent } from './grant-expenditures/grant-expenditu
 import { HomeLandingComponent } from './home-landing/home-landing.component';
 import { HomeClosedComponent } from './home-closed/home-closed.component';
 import { HomeDeniedComponent } from './home-denied/home-denied.component';
+import { HomeAllGrantsComponent } from './home-all-grants/home-all-grants.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { HomeDeniedComponent } from './home-denied/home-denied.component';
     GrantExpendituresComponent,
     HomeLandingComponent,
     HomeClosedComponent,
-    HomeDeniedComponent
+    HomeDeniedComponent,
+    HomeAllGrantsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -68,7 +70,8 @@ import { HomeDeniedComponent } from './home-denied/home-denied.component';
       { path: 'home', component: HomeComponent },
       { path: 'home-landing', component: HomeLandingComponent },
       { path: 'closed-grant', component: HomeClosedComponent },
-      { path: 'denied-grant', component: HomeDeniedComponent }
+      { path: 'denied-grant', component: HomeDeniedComponent },
+      { path: 'all-grants', component: HomeAllGrantsComponent }
     ])
   ],
   providers: [],
