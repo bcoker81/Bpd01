@@ -3,17 +3,17 @@ import { Stat } from '../Models/stat';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-home-closed',
-  templateUrl: './home-closed.component.html',
-  styleUrls: ['./home-closed.component.css']
+  selector: 'app-home-denied',
+  templateUrl: './home-denied.component.html',
+  styleUrls: ['./home-denied.component.css']
 })
-export class HomeClosedComponent implements OnInit {
+export class HomeDeniedComponent implements OnInit {
   public grants: Grants[];
-  searchStatus = 'CLOSED';
+  searchStatus = 'DENIED';
   stats: Stat;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Grants[]>(baseUrl + 'grants/status/2').subscribe(result => {
+    http.get<Grants[]>(baseUrl + 'grants/status/4').subscribe(result => {
       this.grants = result;
     }, error => console.error(error));
   }
