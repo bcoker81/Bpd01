@@ -13,7 +13,7 @@ export class HomeAllGrantsComponent implements OnInit {
   stats: Stat;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Grants[]>(baseUrl + 'grants/status/2').subscribe(result => {
+    http.get<Grants[]>(baseUrl + 'grants/all').subscribe(result => {
       this.grants = result;
     }, error => console.error(error));
   }

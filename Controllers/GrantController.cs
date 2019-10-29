@@ -35,5 +35,13 @@ namespace BPD01.Controllers
             var result = await _context.Grants.Where(p => p.Id == id).FirstAsync();
             return result;
         }
+
+        [HttpGet("all")]
+        public async Task<IEnumerable<Grants>> GetAll()
+        {
+            List<Grants> grantList = new List<Grants>();
+            var result = await _context.Grants.ToListAsync();
+            return result;
+        }
     }
 }
